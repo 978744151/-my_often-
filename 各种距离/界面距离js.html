@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            width: 4000px;
+            height: 4000px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li class="client">134223423</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li class="page">1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li class="offset">1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li class="screen">1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+</ul>
+<script type="text/javascript">
+    // var client = document.querySelector('.client')
+    // var page = document.querySelector('.page')
+    // var offset = document.querySelector('.offset')
+    // var screenX = document.querySelector('.screen')
+
+    // console.log(offset.offsetHeight)// 获取
+
+    document.body.onclick = function (e) {
+    //IE678点击方法里没有事件对象
+
+//    if(e == undefined){
+//      e = window.event;
+//    }
+    e = e || window.event;
+    console.log(e);
+    console.log("屏幕可见范围的水平距离" + e.screenX);   //到屏幕距离
+    console.log("屏幕可见范围的垂直距离" + e.screenY);
+
+
+    console.log("界面可见范围的水平距离" + e.clientX);     // 到可视区的距离
+    console.log("界面可见范围的垂直距离" + e.clientY);
+
+
+
+
+    // //界面可见范围的滚动距离 + 左边卷去的距离
+
+    console.log("整个界面范围的水平距离" + getPage(e).x);
+    console.log("整个界面范围的垂直距离" + getPage(e).y);
+
+  }
+    function getPage(e){
+    return {
+      //界面可见范围的滚动距离 + 左边卷去的距离
+      x : e.pageX || e.clientX + document.documentElement.scrollLeft,
+      y : e.pageY || e.clientY + document.documentElement.scrollTop,
+    };
+}
+
+
+//获取滚动的距离
+// window.onscroll = function(){
+//     var height=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop;
+//     console.log(height);
+// }
+</script>
+</body>
+</html>
